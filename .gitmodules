@@ -122,3 +122,6 @@
 [submodule "bundle/clojure"]
 	path = bundle/clojure
 	url = git://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/session"]
+	path = bundle/session
+	url = git://github.com/vim-scripts/session.vim--Odding.git
