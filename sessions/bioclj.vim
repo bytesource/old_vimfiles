@@ -1,5 +1,5 @@
 " ~/.vim/sessions/bioclj.vim: Vim session script.
-" Created by ~/.vim/bundle/session/autoload/session.vim on 01 March 2011 at 12:09:21.
+" Created by ~/.vim/bundle/session/autoload/session.vim on 01 March 2011 at 15:05:42.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -20,7 +20,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +103 ~/Clojure/bioclj/src/bioclj/core.clj
+badd +34 ~/Clojure/bioclj/src/bioclj/core.clj
 badd +104 ~/.vimrc
 silent! argdel *
 set lines=30 columns=147
@@ -28,34 +28,17 @@ edit ~/Clojure/bioclj/src/bioclj/core.clj
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 30 + 73) / 147)
-exe 'vert 2resize ' . ((&columns * 30 + 73) / 147)
-exe 'vert 3resize ' . ((&columns * 85 + 73) / 147)
+exe 'vert 1resize ' . ((&columns * 29 + 73) / 147)
+exe 'vert 2resize ' . ((&columns * 117 + 73) / 147)
 argglobal
 enew
-file NERD_tree_1
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=3
-setlocal nofen
-lcd ~/Clojure/bioclj/src/bioclj
-wincmd w
-argglobal
-enew
-file ~/Clojure/bioclj/src/bioclj/__Tag_List__
+file __Tag_List__
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -75,18 +58,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=3
 setlocal nofen
-let s:l = 72 - ((12 * winheight(0) + 14) / 28)
+let s:l = 55 - ((13 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-72
+55
 normal! 0
 lcd ~/Clojure/bioclj/src/bioclj
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 30 + 73) / 147)
-exe 'vert 2resize ' . ((&columns * 30 + 73) / 147)
-exe 'vert 3resize ' . ((&columns * 85 + 73) / 147)
+exe 'vert 1resize ' . ((&columns * 29 + 73) / 147)
+exe 'vert 2resize ' . ((&columns * 117 + 73) / 147)
 tabedit ~/.vimrc
 set splitbelow splitright
 set nosplitbelow
@@ -102,14 +83,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=3
 setlocal nofen
-let s:l = 121 - ((15 * winheight(0) + 14) / 28)
+let s:l = 75 - ((10 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-121
-normal! 0
+75
+normal! 024l
 lcd ~/
-2wincmd w
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
@@ -125,10 +105,5 @@ doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
 1wincmd w
-bwipeout
-NERDTree ~/
-1resize 28|vert 1resize 30|2resize 28|vert 2resize 30|3resize 28|vert 3resize 85|
-tabnext 1
-2wincmd w
 
 " vim: ft=vim ro nowrap smc=128
