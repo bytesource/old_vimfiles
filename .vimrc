@@ -72,7 +72,10 @@ let vimclojure#DynamicHighlighting = 1
 let tlist_clojure_settings = 'lisp;f:function'
 " Close the TagList window if the last file was closed.
 let Tlist_Exit_OnlyWindow=1
-let Tlist_Show_One_File=1
+" let Tlist_Show_One_File=1
+let Tlist_Auto_Open=1
+let Tlist_Compact_Format=1
+let Tlist_File_Fold_Auto_Close=1
 
 
 " === Color Scheme & Font
