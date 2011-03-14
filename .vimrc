@@ -100,11 +100,20 @@ set wrapscan"
 
 " set the search scan so that it ignores case when the search is all lower
 " case but recognizes uppercase if it's specified
-set ignorecase
+" set ignorecase
 set smartcase
 
 " Incrementally match the search
 set incsearch
+
+" Highlight search matches
+set hlsearch
+
+if &bg == 'dark' 
+    hi Search gui=NONE guifg=yellow 
+else 
+    hi Search gui=NONE guibg=yellow
+endif
 
 " Make sure that unsaved buffers that are to be put in the background are
 " allowed to go in there (ie. the "must save first" error doesn't come up)
@@ -171,3 +180,10 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline(
 " Using Vim with the Ruby Version Manager (RVM)
 " http://www.hacksrus.net/blog/2010/10/using-vim-with-the-ruby-version-manager/
 set shellcmdflag=-ic
+
+
+" Macro: SQL example 
+let @a = "IUPDATE USER wywA IDENTIFIED BY 'pa'j"
+
+" Don't activate autoclose
+let g:autoclose_on = 0
