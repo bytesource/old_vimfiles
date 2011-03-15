@@ -190,3 +190,6 @@ let g:autoclose_on = 0
 
 " Make list of Rails projects in menu persistent. 
 set viminfo^=!
+
+" Unmap <C-I> to restore default behaviour
+unmap <C-I>
