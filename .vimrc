@@ -187,3 +187,6 @@ let @a = "IUPDATE USER wywA IDENTIFIED BY 'pa'j"
 
 " Don't activate autoclose
 let g:autoclose_on = 0
+
+" Make list of Rails projects in menu persistent. 
+set viminfo^=!
