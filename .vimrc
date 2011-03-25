@@ -63,7 +63,7 @@ let clj_want_gorilla = 1
 
 " Optional commands
 
-let vimclojure#DynamicHighlighting = 1
+"let vimclojure#DynamicHighlighting = 1
 
 
 " Taglist plugin & Clojure
@@ -188,8 +188,14 @@ let @a = "IUPDATE USER wywA IDENTIFIED BY 'pa'j"
 " Don't activate autoclose
 let g:autoclose_on = 0
 
-" Make list of Rails projects in menu persistent. 
-set viminfo^=!
 
 " Unmap <C-I> to restore default behaviour
 unmap <C-I>
+
+" -------------------------------------------------
+" Ruby on Rails
+" -------------------------------------------------
+let g:rails_default_file='config/database.yml' 
+
+" Make list of Rails projects in menu persistent. 
+set viminfo^=!
