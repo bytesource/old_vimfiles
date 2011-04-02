@@ -1,14 +1,11 @@
 source ~/.vim/vimrc
 
-"=== NERD TREE
-
 
 " === Local Leader
 let maplocalleader = "_"
 
-" Toggle NERD Tree with ctrl+n instead of :NERDTreeToggle 
-" %:p:h uses the path of the currently active buffer. 
-" If no buffer is open, it opens in the currently launched Vim directory.
+
+"=== NERD TREE
 
 "  Configure Vim so that it sets the working directory to the current file's directory:
 
@@ -195,7 +192,16 @@ unmap <C-I>
 " -------------------------------------------------
 " Ruby on Rails
 " -------------------------------------------------
-let g:rails_default_file='config/database.yml' 
+let g:rails_default_file='config/routes.rb' 
 
 " Make list of Rails projects in menu persistent. 
 set viminfo^=!
+
+" Ragtag
+autocmd User Rails/**/*.erb let b:surround_{char2nr('-')} = "<% \r %>"
+
+" Automatically open NERDTree when a rails project is opened.
+" autocmd User Rails Rtree
+
+" Keep for later:
+" autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
