@@ -198,10 +198,12 @@ let g:rails_default_file='config/routes.rb'
 set viminfo^=!
 
 " Ragtag
+" The `-` tells ERb to trim the trailing newline if the appropriate option is enabled, 
+" and Rails enables that option. It is possible to override this:
 autocmd User Rails/**/*.erb let b:surround_{char2nr('-')} = "<% \r %>"
 
 " Automatically open NERDTree when a rails project is opened.
-" autocmd User Rails Rtree
+" autocmd User Rails :Rtree<CR>
 
 " Keep for later:
 " autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
