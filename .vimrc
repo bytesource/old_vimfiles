@@ -43,6 +43,8 @@ let NERDTreeShowBookmarks=1
     set sessionoptions-=help
 
 
+" === Color Scheme & Font
+colorscheme railscasts_grey_comment
 " === Overwriting Font Settings
 
 set guifont=Droid\ Sans\ Mono\ Slashed\ 11 
