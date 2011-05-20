@@ -14,7 +14,7 @@ autocmd BufEnter * lcd %:p:h
 " Toggle NERDTree to open the working directory
 
 " nmap <silent> <c-n> :NERDTreeToggle %:p:h<CR>
-nmap <silent> <c-t> :NERDTreeToggle<CR>
+nmap <silent> ;tn :NERDTreeToggle<CR>
 
 " use the following mapping to view the current buffer in NERDTree:
 
@@ -68,13 +68,8 @@ let clj_want_gorilla = 1
 " Taglist plugin & Clojure
 " http://kuriqoo.blogspot.com/2011/02/using-clojure-in-vim.html 
 
+" Configure Tlist to use with Clojure:
 let tlist_clojure_settings = 'lisp;f:function'
-" Close the TagList window if the last file was closed.
-let Tlist_Exit_OnlyWindow=1
-" let Tlist_Show_One_File=1
-let Tlist_Auto_Open=1
-let Tlist_Compact_Format=1
-let Tlist_File_Fold_Auto_Close=1
 
 
 " === Color Scheme & Font
@@ -85,6 +80,22 @@ au FileType clojure colorscheme gentooish
 
 " =================================================================================
 
+" TLIST MAIN SETTINGS
+" Close the TagList window if the last file was closed.
+let Tlist_Exit_OnlyWindow=1
+" let Tlist_Show_One_File=1
+let Tlist_Auto_Open=1
+let Tlist_Compact_Format=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Sort_Type = 'name'
+
+
+nmap <silent> ;tt :TlistToggle<CR>
+
+" Recurively searching for (ctags) tag files:
+set tags=tags;$HOME
+" Map 'open function definition in horizontal window' to more convenient keys.
+map ;fd <C-W><C-]>
 
 " === FuzzyFinder
 
