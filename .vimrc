@@ -93,7 +93,13 @@ let Tlist_Sort_Type = 'name'
 nmap <silent> ;tt :TlistToggle<CR>
 
 " Recurively searching for (ctags) tag files:
-set tags=tags;$HOME
+" set tags=tags;$HOME
+" Build tags of current directory
+" pt = project tags
+map ;pt :Rcd <bar> :silent !ctags --extra=+f -R *
+" Build tags of rails project
+" rt = rails tags
+map ;rt :silent !ctags -R `bundle show rails`/../*
 " Map 'open function definition in horizontal window' to more convenient keys.
 map ;fd <C-W><C-]>
 
@@ -215,8 +221,8 @@ set viminfo^=!
 " and Rails enables that option. It is possible to override this:
 autocmd User Rails/**/*.erb let b:surround_{char2nr('-')} = "<% \r %>"
 
-" Automatically open NERDTree when a rails project is opened.
-" autocmd User Rails :Rtree<CR>
+" Automatically build tags of current rails project.
+autocmd User Rails :silent !ctags --extra=+f -R *
 
 " Keep for later:
 " autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
