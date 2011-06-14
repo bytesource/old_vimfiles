@@ -226,3 +226,11 @@ autocmd User Rails :silent !ctags --extra=+f -R *
 
 " Keep for later:
 " autocmd User Rails let  g:fuzzy_roots = [RailsRoot()] 
+
+" ---------------------------------------------
+"  Conque Plugin Settings
+"  --------------------------------------------
+
+" Send visually selected text to an existing terminal buffer
+" ;sc = 'send (to) Conque'
+let g:ConqueTerm_SendVisKey = ';sc' 
