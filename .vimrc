@@ -100,6 +100,9 @@ map ;pt :Rcd <bar> :silent !ctags --extra=+f -R *
 " Build tags of rails project
 " rt = rails tags
 map ;rt :silent !ctags -R `bundle show rails`/../*
+" Build tags for the sequel gem
+" st = sequel tags
+map ;st :silent !ctags -R `bundle show sequel`/../*
 " Map 'open function definition in horizontal window' to more convenient keys.
 map ;fd <C-W><C-]>
 
@@ -185,6 +188,10 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
+
+" Resizing window
+map + <C-W>+
+map - <C-W>-
 
 " Return to normal window size
 map <C-C> <C-W>=

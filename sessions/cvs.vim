@@ -1,5 +1,5 @@
-" ~/.vim/sessions/bioclj.vim: Vim session script.
-" Created by ~/.vim/bundle/session/autoload/session.vim on 21 March 2011 at 06:10:07.
+" ~/.vim/sessions/cvs.vim: Vim session script.
+" Created by ~/.vim/bundle/session/autoload/session.vim on 27 六月 2011 at 20:54:42.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -8,7 +8,7 @@ if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
 if exists('g:did_indent_on') != 1 | filetype indent on | endif
-if !exists('g:colors_name') || g:colors_name != 'gentooish' | colorscheme gentooish | endif
+if !exists('g:colors_name') || g:colors_name != 'railscasts' | colorscheme railscasts | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -20,12 +20,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +2 ~/Clojure/bioclj/src/bioclj/core.clj
-badd +75 ~/.vimrc
-badd +9 ~/索诺国际/SOVONEX\ OFFICE/Programming/Ruby/bioruby-bioruby-f046a52/doc/Tutorial.rd
-silent! argdel *
+badd +0 ~/Desktop/temp/csv_table/how_to_use.rb
+badd +0 ~/Desktop/temp/csv_table/lib/csvtable.rb
+badd +0 ~/Desktop/temp/csv_table/test/csvtable_spec.rb
+args ~/Desktop/temp/csv_table/how_to_use.rb
 set lines=30 columns=147
-edit ~/Clojure/bioclj/src/bioclj/core.clj
+edit ~/Desktop/temp/csv_table/how_to_use.rb
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -35,20 +35,20 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 20 + 73) / 147)
-exe 'vert 2resize ' . ((&columns * 126 + 73) / 147)
+exe 'vert 1resize ' . ((&columns * 19 + 73) / 147)
+exe 'vert 2resize ' . ((&columns * 127 + 73) / 147)
 argglobal
 enew
-file __Tag_List__
-setlocal fdm=manual
+file NERD_tree_1
+setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=9999
-setlocal fml=0
+setlocal fdl=0
+setlocal fml=1
 setlocal fdn=3
-setlocal fen
-lcd ~/Clojure/bioclj/src/bioclj
+setlocal nofen
+lcd ~/Desktop/temp/csv_table
 wincmd w
 argglobal
 setlocal fdm=indent
@@ -59,18 +59,17 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=3
 setlocal nofen
-let s:l = 62 - ((18 * winheight(0) + 14) / 28)
+let s:l = 44 - ((13 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-62
-normal! 0
-lcd ~/Clojure/bioclj/src/bioclj
+44
+normal! 02l
+lcd ~/Desktop/temp/csv_table
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 20 + 73) / 147)
-exe 'vert 2resize ' . ((&columns * 126 + 73) / 147)
-tabedit ~/索诺国际/SOVONEX\ OFFICE/Programming/Ruby/bioruby-bioruby-f046a52/doc/Tutorial.rd
+exe 'vert 1resize ' . ((&columns * 19 + 73) / 147)
+exe 'vert 2resize ' . ((&columns * 127 + 73) / 147)
+tabedit ~/Desktop/temp/csv_table/test/csvtable_spec.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -85,15 +84,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=3
 setlocal nofen
-let s:l = 117 - ((3 * winheight(0) + 14) / 28)
+let s:l = 93 - ((23 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-117
-normal! 0
-lcd ~/索诺国际/SOVONEX\ OFFICE/Programming/Ruby/bioruby-bioruby-f046a52/doc
-2wincmd w
-tabedit ~/.vimrc
+93
+normal! 033l
+lcd ~/Desktop/temp/csv_table/test
+tabedit ~/Desktop/temp/csv_table/lib/csvtable.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -108,15 +106,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=3
 setlocal nofen
-let s:l = 69 - ((13 * winheight(0) + 14) / 28)
+let s:l = 167 - ((20 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-69
-normal! 05l
-lcd ~/
-2wincmd w
-tabnext 1
+167
+normal! 049l
+lcd ~/Desktop/temp/csv_table/lib
+tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -130,6 +127,11 @@ let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 unlet SessionLoad
 tabnext 1
-2wincmd w
+1wincmd w
+bwipeout
+NERDTree ~/Desktop/temp/csv_table
+1resize 28|vert 1resize 19|2resize 28|vert 2resize 127|
+tabnext 2
+1wincmd w
 
 " vim: ft=vim ro nowrap smc=128

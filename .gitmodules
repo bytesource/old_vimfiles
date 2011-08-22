@@ -135,3 +135,6 @@
 [submodule "bundle/slime"]
 	path = bundle/slime
 	url = git://github.com/jpalardy/vim-slime.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
