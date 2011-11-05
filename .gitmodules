@@ -138,3 +138,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/rubyblock"]
+	path = bundle/rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock
