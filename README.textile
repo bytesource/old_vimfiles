@@ -1,5 +1,7 @@
 h1. Vim
 
+h2. This is my fomer Vim installation. I am now using Vundle to manage my plugins.
+
 It is recommended that you use gVim in either Windows or Linux and MacVim for
 Mac. Download from:
 
